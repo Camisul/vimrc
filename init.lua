@@ -440,9 +440,9 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  solidity = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
