@@ -442,7 +442,7 @@ local servers = {
   -- rust_analyzer = {},
   tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-  solidity = {},
+  solidity_ls_nomicfoundation = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
