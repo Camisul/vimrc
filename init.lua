@@ -458,6 +458,7 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  yamlls = {},
   solidity_ls_nomicfoundation = {},
   lua_ls = {
     Lua = {
