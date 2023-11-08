@@ -165,8 +165,7 @@ require('lazy').setup({
     -- See `:help indent_blankline.txt`
     main = 'ibl',
     opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
+      indent = { char = '┊' },
     },
   },
 
@@ -213,6 +212,7 @@ require('lazy').setup({
     },
   },
 
+  { 'b0o/schemastore.nvim' },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -443,6 +443,11 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
+vim.filetype.add {
+  filename = {
+    ['.swcrc'] = 'jsonc',
+  },
+}
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -459,6 +464,12 @@ local servers = {
   tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   yamlls = {},
+  jsonls = {
+    schemas = require('schemastore').json.schemas(),
+    validate = { enable = true },
+    pattern = { '.swcrc' },
+    -- filetypes = { 'json', 'jsonc', '.swcrc' },
+  },
   solidity_ls_nomicfoundation = {},
   lua_ls = {
     Lua = {
